@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      color: red;
+    }
+
+    .line {
+      text-decoration: underline;
+    }
+
+    .bg {
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <h2 :class="{类名1: boolean, 类名2: boolean}">{{message}}</h2> -->
+    <!-- class和v-bind: 会合并 取并集 -->
+    <h2 class="bg" :class="{active: isActive, line: isLine}">{{message}}</h2>
+    <!-- 对象可以封装到函数里返回 -->
+    <h2 class="bg" :class="getClasses()">{{message}}</h2>
+    <button @click="swap">按钮</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好啊",
+        isActive: true,
+        isLine: true
+      },
+      methods: {
+        swap: function () {
+          this.isActive ^= true;
+        },
+        getClasses: function () {
+          return { active: this.isActive, line: this.isLine }
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>

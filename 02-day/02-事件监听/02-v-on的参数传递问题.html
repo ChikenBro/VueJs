@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id='app'>
+    <!-- 事件调用的方法没有参数 -->
+    <button @click="btn1Click">按钮1</button>
+    <button @click="btn1Click()">按钮1</button>
+
+    <!-- 在事件定义时 写函数时省略了小括号 但是方法本身需要一个参数 -->
+    <!-- 显示undefined -->
+    <button @click='bnt2Click()'>按钮2</button>
+    <!-- 显示的是event事件对象 -->
+    <button @click='bnt2Click'>按钮2</button>
+
+    <!-- 在方法定义时,我们需要event对象,同时又需要其他对象 -->
+    <!-- 手动获取event事件对象 $event  -->
+    <button @click='btn3Cilck(`abc`,$event)'>按钮3</button>
+
+  </div>
+  <script src="../../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        counter: 0
+      },
+      methods: {
+        btn1Click() {
+          console.log('btn1Click');
+        },
+        bnt2Click(arg) {
+          console.log(arg, '-------------');
+        },
+        btn3Cilck(arg, event,) {
+          console.log('-----', arg, event);
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

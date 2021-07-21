@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <button>按钮4</button>
+  <button>按钮5</button>
+  <script>
+    // var没有块级作用域
+    //这个大括号对变量申明没有意义
+    {
+      var name = 'Bob';
+      console.log(name);
+    }
+    console.log(name);
+
+    // 没有块级作用域会引起的问题 if的块级
+    var func;
+    if (true) {
+      var name = "Bob";
+      func = function () {
+        console.log(name);
+      }
+      // func()
+    }
+    name = 'Tom'; //本质是想打印Bob 但在外部改变了name 打印出了Tom
+    func()
+
+    // 没有块级作用域会引起的问题 for的块级
+    // var btns = document.querySelectorAll('button');
+    // for (var i = 0; i < btns.length; i++) {
+    // btns[i].addEventListener('click', function () {
+    //   console.log('第' + i + '个按钮被点击');
+    // })
+    // 都会显示第五个按钮被点击
+    // 真正点击前 i已经是5了
+    // 以前为了解决这个问题 会搞个闭包 因为函数有作用域
+    //   (function (i) {
+    //     btns[i].addEventListener('click', function () {
+    //       console.log('第' + (i + 1) + '个按钮被点击');
+    //     })
+    //   })(i)
+    // }
+
+    // let有if和for的块级作用域
+    const btns = document.querySelectorAll('button');
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function () {
+        console.log('第' + (i + 1) + '个按钮被点击');
+      })
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 建议: 在ES6开发中 优先使用const,只有需要改变某一标识符的时候才有let
+    const a = 20;
+    a = 30; //错误 不可以修改
+    const name; //错误 申明必须赋值
+
+    // 常量的含义是指向的对象不能修改 但可以改变对象内部的属性  
+    const obj = {
+      name: 'zrf'
+    }
+    obj.name = 'zjx';
+    obj.sex = 'girl';
+    console.log(obj.name, obj.sex);
+  </script>
+</body>
+
+</html>

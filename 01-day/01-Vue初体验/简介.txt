@@ -1,0 +1,15 @@
+Vue (读音 /vju:/ 类似于View) 是一种渐进式的框架
+Vue 全家桶 Core + Vue-router + Vuex
+
+安装Vue
+1、直接引入
+开发环境版本 包含了有帮助的命令行警告
+<script src="https://cdn.jsdelivr.net./npm/vue/dist/vue.js"></script>
+生产环境版本 优化了尺寸和速度 压缩了代码
+<script src="https://cdn.jsdelivr.net./npm/vue"></script>
+
+2、下载和引入
+开发环境：  http://vuejs.org/js/vue.js
+生产环境：  http://vuejs.org/js/vue.min.js
+
+3、NPM安装 

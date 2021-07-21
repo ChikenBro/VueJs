@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in letters">{{item}}</li>
+    </ul>
+    <button @click="btnClick">按钮</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        letters: ['a', 'e', 'c', 'd', 'b'],
+      },
+      methods: {
+        btnClick() {
+          // 1.push() 尾插 可以一次性加多个元素
+          // this.letters.push('zrf', 'zrf2');
+
+          //注意：通过索引值来修改 不能响应的改变页面
+          // this.letters[0] = 'bbb';
+
+          //2.pop() 尾删
+          // this.letters.pop();
+
+          //3.shift() 头删
+          // this.letters.shift(); 
+
+          // 4.unshift() 头插 支持加多个
+          // this.letters.unshift('aa', 'cc');
+
+          // 5.splice() 删除/插入/替换元素    
+          //splice(开始下标,删除个数(默认删除之后全部),...[添加的元素])
+          // this.letters.splice(2, 0, '+', '+');
+          // slice()不响应哦
+
+          // 6.sort()
+          // this.letters.sort();
+
+          // 7..reverse()
+          // this.letters.reverse();
+
+          // 8.Vue.set(要修改的对象,索引值,修改的值)
+          Vue.set(this.letters, 0, 'update');
+        },
+      }
+    })
+
+  </script>
+</body>
+
+</html>

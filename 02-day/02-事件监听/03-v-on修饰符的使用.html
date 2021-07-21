@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app" @click="divClick">
+    odawbuuga
+    <!-- 1 .stop修饰符:阻止事件冒泡 -->
+    <button @click.stop="btnClick">按钮</button>
+    <br>
+
+    <!-- 2 .prevent修饰符:阻止默认事件 -->
+    <form action="http://www.baidu.com">
+      <input @click.prevent.stop="submitClick" type="submit" value="提交">
+    </form>
+    <br>
+
+    <!-- 3 .监听某个键盘键帽的点击  -->
+    <!-- eg 只监听回车键 -->
+    <input @keyup.enter="keyUp" type="text" value="">
+    <input @keyup.13="keyUp" type="text" value="">
+
+    <!-- 4 自定义组件的监听 .native -->
+    <!-- <cpn @click.native="cpnClick"></cpn> -->
+
+    <!-- 5 .once修饰符的使用 只使用一次 -->
+    <button @click.once="onceClick">按钮2</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好啊"
+      },
+      methods: {
+        btnClick() {
+          console.log('btnclick');
+        },
+        divClick() {
+          console.log('divclick');
+        },
+        submitClick() {
+          console.log("submitClick");
+        },
+        keyUp() {
+          console.log('keyUp');
+        },
+        cpnClick() {
+          console.log('cpnClick');
+        },
+        onceClick() {
+          console.log('onceClick');
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

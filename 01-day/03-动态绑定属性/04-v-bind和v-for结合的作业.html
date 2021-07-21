@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+
+    li {
+      padding: 2px;
+      list-style-type: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<!-- 作业需求 点击列表中的哪一项 该项的文字变成红色 -->
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(item, index) in movies" :class="{red:index === currentIndex}" @click="swap(index)">{{index + ' ' +
+        item}}</li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好啊",
+        movies: ['海王', '钢铁侠', '绿巨人', '黑寡妇'],
+        currentIndex: 0,
+      },
+      methods: {
+        swap: function (index) {
+          this.currentIndex = index;
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>

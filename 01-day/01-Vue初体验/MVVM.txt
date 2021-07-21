@@ -1,0 +1,12 @@
+Model-View-View-Model
+
+             ViewModel
+View ---- DOM Listeners  --->  Model
+DOM  <--- Data Bindings  ----  Plain Js Objects
+               Vue                        
+
+方法：method
+函数：function
+对象里的叫方法
+外面叫函数  
+  

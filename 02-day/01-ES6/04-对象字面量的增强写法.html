@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 现在还有Typescript(ts) 他有类型检测 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const obj = {}; //这就叫字面量写法
+    // 1.属性的增强写法
+    const name = 'zrf';
+    const age = 22;
+    // ES5写法
+    const people = {
+      name: name,
+      age: age,
+    }
+    // ES6写法
+    const people2 = {
+      name,  //内部会把变量的名作为key 变量的值作为value  
+      age,
+    }
+
+    // 2.函数的增强写法
+    const domo = {
+      // es5
+      run: function () {
+
+      },
+      // es6
+      eat() {
+
+      }
+
+    }
+    
+  </script>
+</body>
+
+</html>

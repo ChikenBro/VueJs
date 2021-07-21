@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 函数会调用4次 -->
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <!-- get函数只执行一次 -->
+    <!-- 只有属性改变了 才会重新执行get函数 -->
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        firstName: 'Lebron',
+        secondName: 'James',
+      },
+      computed: {
+        fullName: function () {
+          return this.firstName + ' ' + this.secondName;
+        }
+      },
+      methods: {
+        getFullName() {
+          return this.firstName + ' ' + this.secondName;
+        }
+      },
+    })
+  </script>
+
+</body>
+
+</html>
