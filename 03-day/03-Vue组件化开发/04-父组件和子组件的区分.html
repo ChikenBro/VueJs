@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <cpn2></cpn2>
+    <!-- 此时cpn1无法解析 -->
+    <cpn1></cpn1>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    // 创建第一个组件构造器(子组件)
+    const cpnC1 = Vue.extend({
+      template: `
+          <div>
+            <h1>my name is zrf</h1>
+            <p>i am handsome boy</p>
+          </div>`
+    })
+
+    // 创建第二个组件构造器(父组件)
+    const cpnC2 = Vue.extend({
+      template: `
+          <div>
+            <h1>my name is zjx</h1>
+            <p>i am beautiful girl</p>
+            <hr>
+            <cpn1></cpn1>
+          </div>`,
+      components: {
+        cpn1: cpnC1
+      }
+    })
+
+    // 可以把app看成root组件
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好啊"
+      },
+      components: {
+        cpn2: cpnC2
+      }
+    })
+  </script>
+</body>
+
+</html>
