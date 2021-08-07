@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve('aaa')
+    //   }, 1000)
+    // }).then(res => {
+    //   console.log(res, "第一层10行处理代码");
+
+    //   return new Promise((resolve) => {
+    //     resolve(res + '111')
+    //   })
+    // }).then(res => {
+    //   console.log(res, "第二层10行处理代码");
+
+    //   return new Promise((resolve) => {
+    //     resolve(res + '222')
+    //   })
+    // }).then(res => {
+    //   console.log(res, "第三层10行处理代码");
+    // })
+
+    // new Promise(resolve => {}) 的简写
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('aaa')
+      }, 1000)
+    }).then(res => {
+      console.log(res, "第一层10行处理代码");
+      return Promise.resolve(res + '111')
+    }).then(res => {
+      console.log(res, "第二层10行处理代码");
+      // return Promise.reject('error')
+      throw 'error message'
+    }).then(res => {
+      console.log(res, "第三层10行处理代码");
+    }).catch(err => {
+      console.log(err);
+    })
+
+    // 省略Promise.resolve
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('aaa')
+      }, 1000)
+    }).then(res => {
+      console.log(res, "第一层10行处理代码");
+      return res + '111'
+    }).then(res => {
+      console.log(res, "第二层10行处理代码");
+      return res + '222'
+    }).then(res => {
+      console.log(res, "第三层10行处理代码");
+    })
+
+
+  </script>
+</body>
+
+</html>

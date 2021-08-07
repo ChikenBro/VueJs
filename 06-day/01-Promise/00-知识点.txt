@@ -1,0 +1,26 @@
+Promise是异步编程的一种解决方案
+
+什么情况下会使用Promise
+  当有异步操作时
+  new ->  构造函数(1.保存了一些转态信息, 2.执行传入的函数)
+  在执行传入的回调函数时,会传入2个参数,resolve,reject,本身又是函数
+  它将网络请求和数据处理进行分离
+  resolve对应then
+  reject对应catch
+  new Promise((resolve,reject) => {
+    setTimeout(() => {
+      //成功调用resolve
+      resolve(data)
+      //失败的时候调用reject
+      reject('error message')
+    },1000)
+  }).then((data) => {
+
+  }).catch((err) => {
+
+  })
+
+异步操作三种转态
+  pending 等待状态 正在进行网络请求 或者 定时器没有到时间
+  fulfill 满足状态 当我们主动调用了resolve时 就处于该状态 并且会回调.then()
+  reject 拒绝状态 当我们主动调用了reject是 就处于该状态 并且会回调.catch()

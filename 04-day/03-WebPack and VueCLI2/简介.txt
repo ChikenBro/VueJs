@@ -1,0 +1,6 @@
+webpack 依赖于 node环境 npm (node packge manager)工具
+全局安装webpack
+npm install webpack@3.6.0 -g
+局部安装
+--save-dev 是开发时依赖 项目打包后不需要继续使用的
+在package.json 中定义了scripts 其中包含了webpack命令 那么使用的就是局部webpack

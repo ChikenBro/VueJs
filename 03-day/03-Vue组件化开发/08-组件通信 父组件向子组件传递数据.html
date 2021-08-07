@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 如果不加v-bind: 会当成字符串赋值给cmovies -->
+    <cpn :cmessage="message" :cstatus="status"></cpn>
+  </div>
+
+  <!-- 父传子 props -->
+  <template id="cpn">
+    <div>
+      <p>{{cmessage}}</p>
+      <ul>
+        <li v-for="item in cmovies">{{item}}</li>
+      </ul>
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const cpn = {
+      template: '#cpn',
+      // props有两种写法 可以是一个字符串数组 或者 对象
+      // props: ['cmovies', 'cmessage'],
+      props: {
+        // 变量名: 变量类型 
+        // String Number Boolean Array Object Date Function Symbol 自定义类型
+        // 可以提供默认值
+        // cmovies: Array,
+        cmessage: {
+          type: String,
+          default: 'default',
+          required: true, //不传会报错
+        },
+        cmovies: {
+          type: Array,
+          // 类型为Array 或者 对象是 默认值必须是一个函数
+          default() {
+            return [];
+          }
+        },
+        // 自定义验证函数
+        cstatus: {
+          type: String,
+          validator(value) {
+            return ['success', 'warning', 'danger'].indexOf(value) !== -1;
+          }
+        }
+      },
+      data() {
+        return {}
+      },
+    }
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: 'string',
+        movies: ['A', 'R', 'R', 'A', 'Y'],
+        status: 'danger'
+      },
+      components: {
+        cpn
+      }
+    });
+  </script>
+</body>
+
+</html>

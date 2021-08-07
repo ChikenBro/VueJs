@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <cpn>
+      <button slot="left">返回</button>
+      <span slot="center" style="color: red;">我替换了中间</span>
+      <span style="color: red;">只替换slot中没有name的</span>
+    </cpn>
+  </div>
+
+  <template id="cpn">
+    <div>
+      <slot name="left"><span>左边</span></slot>
+      <slot name="center"><span>中间</span></slot>
+      <slot name="right"><span>右边</span></slot>
+      <slot>hahah</slot>
+
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好啊"
+      },
+      components: {
+        cpn: {
+          template: '#cpn',
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <cpn ref="first"></cpn>
+    <cpn ref="second"></cpn>
+    <cpn ref="third"></cpn>
+    <button @click='btnClick'>按钮</button>
+  </div>
+  <template id="cpn">
+    <div>
+      我是子组件
+    </div>
+  </template>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好啊"
+      },
+      methods: {
+        btnClick() {
+          // 1. $children 实际开发用的比较少
+          console.log(this.$children);
+          console.log(this.$children[0].name);
+          this.$children[0].showMessage();
+          console.log('------------------------------------------');
+          // 2. $refs 对象类型 默认是空对象 必须在组件上加ref属性
+          console.log(this.$refs.first.name);
+          this.$refs['second'].showMessage();
+        }
+      },
+      components: {
+        cpn: {
+          template: '#cpn',
+          data() {
+            return {
+              name: '我是子组件',
+            }
+          },
+          methods: {
+            showMessage() {
+              console.log('showMessage children');
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

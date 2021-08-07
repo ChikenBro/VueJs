@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<body>
+  <div>
+    全局变量命名冲突
+    对js文件的顺序依赖性特别强
+    以前虽然可以用闭包解决 但是代码的复用性又变低了
+  </div>
+  <script src="main.js"></script>
+  <script src='a.js'></script>
+  <script src='c.js'></script>
+  <script src='b.js'></script>
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+1.vue ui 启动本地服务 管理项目
+
+2.node-module/@vue/cli-service/webpack.config.js
+node-module/@vue/cli-service/lib/Service
+
+3.在项目下创建vue.config.js文件
+  module.exports = {
+    
+  }

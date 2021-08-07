@@ -1,0 +1,12 @@
+build和config都是做webpack的配置
+static静态文件会原封不动发复制到dist文件夹中
+bablerc es6->es5相关配置
+editorconfig 一些基本要求 什么缩进空行
+eslintignore 对一些不规范代码的文件进行忽略
+.gitignore 上传到服务器的时候 忽略一些文件 不上传他们
+
+如果安装失败
+去删除c/users/administrator/appdata/roaming/npm-cache这个文件夹
+
+安装2.x模板
+npm install @vue/cli-init

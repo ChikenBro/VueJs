@@ -1,0 +1,12 @@
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+把npm 改成 cnpm
+
+安装axios:npm install axios --save
+httpbin.org/
+http://106.54.54.237:8000/home/data?type=pop&page=1
+服务器地址 http://123.207.32.32:8000/home/multidata
+          http://123.207.32.32:8000/home/data?type=pop&page=1
+          codewhy/home/data?type=pop&page=1
+axios(config)
+axios.get(url,config)
+axios.post(url,config)

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <cpn><button>按钮</button></cpn>
+    <cpn><span>span span</span></cpn>
+
+    <!-- 没有东西就是默认值 -->
+    <cpn></cpn>
+
+    <!-- 全部都会显示 -->
+    <cpn>
+      <i>第一个</i>
+      <b>第二个</b>
+      <ins>第三个</ins>
+  </div>
+
+  <template id="cpn">
+    <div style="border: 1px dashed #000;margin: 2px 0;">
+      <h2>插条的作用</h2>
+      <p>让组件更具有拓展性</p>
+      <slot><button>默认值</button></slot>
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好啊"
+      },
+      components: {
+        cpn: {
+          template: '#cpn',
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

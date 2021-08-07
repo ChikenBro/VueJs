@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 如果用了驼峰必须得用-代替驼峰 -->
+    <cpn :c-info="info"></cpn>
+  </div>
+  <template id="cpn">
+    <div>
+      <ul>
+        <li v-for='(value,key) in cInfo'>{{key}}:{{value}}</li>
+      </ul>
+      <!-- 必须把所有东西放到一个根元素里 -->
+      <p>{{croot}}</p>
+      <p>没用变量也要放在里面哦</p>
+    </div>
+
+  </template>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const cpn = {
+      template: '#cpn',
+      props: {
+        // 为什么不写驼峰标识呢？ 
+        // 因为HTML使用的自定义组件要转换命名 比较麻烦
+        cInfo: {
+          type: Object,
+          default() { return {} },
+        },
+        croot: {
+          type: String,
+          default: 'root',
+        }
+      }
+    }
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "你好啊",
+        info: {
+          name: 'zrf',
+          age: 22,
+          height: 175
+        },
+      },
+      components: {
+        cpn
+      }
+    })
+  </script>
+</body>
+
+</html>

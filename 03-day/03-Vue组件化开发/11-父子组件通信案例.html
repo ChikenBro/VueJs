@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 如果没有其他内容可以简写成单标签 但使用单标签后 后面的内容都无法显示了-->
+    <cpn :number1='num1' :number2='num2' @num1change="pnum1change" @num2change="pnum2change"></cpn>
+    <p>{{num1}}</p>
+    <p>{{num2}}</p>
+  </div>
+  <template id='cpn'>
+    <div>
+      <h2>props:{{number1}}</h2>
+      <h2>data:{{dnumber1}}</h2>
+      <!-- 尽量不要绑定到props 最好绑定到计算属性或者data()-->
+      <input type="text" :value="dnumber1" @input="num1Input">
+
+      <h2>props:{{number2}}</h2>
+      <h2>data:{{dnumber2}}</h2>
+      <input type="text" :value="dnumber2" @input="num2Input">
+    </div>
+  </template>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        num1: 1,
+        num2: 0,
+      },
+      methods: {
+        // 因为传过来的是字符串类型 所以要做类型转换
+        pnum1change(value) {
+          this.num1 = parseFloat(value);
+        },
+        pnum2change(value) {
+          this.num2 = parseFloat(value);
+        },
+      },
+      components: {
+        cpn: {
+          template: '#cpn',
+          props: {
+            number1: Number,
+            number2: Number,
+          },
+          data() {
+            return {
+              dnumber1: this.number1,
+              dnumber2: this.number2,
+            }
+          },
+          methods: {
+            num1Input(event) {
+              this.dnumber1 = event.target.value;
+              this.$emit('num1change', this.dnumber1);
+
+              this.dnumber2 = this.dnumber1 * 100;
+              this.$emit('num2change', this.dnumber2);
+            },
+            num2Input(event) {
+              this.dnumber2 = event.target.value;
+              this.$emit('num2change', this.dnumber2);
+
+
+              this.dnumber1 = this.dnumber2 / 100;
+              this.$emit('num1change', this.dnumber1);
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
