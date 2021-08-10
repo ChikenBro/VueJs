@@ -1,0 +1,240 @@
+<template>
+  <div class="wrapper">
+    <ul class="content">
+      <li>1测试</li>
+      <li>2测试</li>
+      <li>3测试</li>
+      <li>4测试</li>
+      <li>5测试</li>
+      <li>6测试</li>
+      <li>7测试</li>
+      <li>8测试</li>
+      <li>9测试</li>
+      <li>10测试</li>
+      <li>11测试</li>
+      <li>12测试</li>
+      <li>13测试</li>
+      <li>14测试</li>
+      <li>15测试</li>
+      <li>16测试</li>
+      <li>17测试</li>
+      <li>18测试</li>
+      <li>19测试</li>
+      <li>20测试</li>
+      <li>21测试</li>
+      <li>22测试</li>
+      <li>23测试</li>
+      <li>24测试</li>
+      <li>25测试</li>
+      <li>26测试</li>
+      <li>27测试</li>
+      <li>28测试</li>
+      <li>29测试</li>
+      <li>30测试</li>
+      <li>31测试</li>
+      <li>32测试</li>
+      <li>33测试</li>
+      <li>34测试</li>
+      <li>35测试</li>
+      <li>36测试</li>
+      <li>37测试</li>
+      <li>38测试</li>
+      <li>39测试</li>
+      <li>40测试</li>
+      <li>41测试</li>
+      <li>42测试</li>
+      <li>43测试</li>
+      <li>44测试</li>
+      <li>45测试</li>
+      <li>46测试</li>
+      <li>47测试</li>
+      <li>48测试</li>
+      <li>49测试</li>
+      <li>50测试</li>
+      <li>51测试</li>
+      <li>52测试</li>
+      <li>53测试</li>
+      <li>54测试</li>
+      <li>55测试</li>
+      <li>56测试</li>
+      <li>57测试</li>
+      <li>58测试</li>
+      <li>59测试</li>
+      <li>60测试</li>
+      <li>61测试</li>
+      <li>62测试</li>
+      <li>63测试</li>
+      <li>64测试</li>
+      <li>65测试</li>
+      <li>66测试</li>
+      <li>67测试</li>
+      <li>68测试</li>
+      <li>69测试</li>
+      <li>70测试</li>
+      <li>71测试</li>
+      <li>72测试</li>
+      <li>73测试</li>
+      <li>74测试</li>
+      <li>75测试</li>
+      <li>76测试</li>
+      <li>77测试</li>
+      <li>78测试</li>
+      <li>79测试</li>
+      <li>80测试</li>
+      <li>81测试</li>
+      <li>82测试</li>
+      <li>83测试</li>
+      <li>84测试</li>
+      <li>85测试</li>
+      <li>86测试</li>
+      <li>87测试</li>
+      <li>88测试</li>
+      <li>89测试</li>
+      <li>90测试</li>
+      <li>91测试</li>
+      <li>92测试</li>
+      <li>93测试</li>
+      <li>94测试</li>
+      <li>95测试</li>
+      <li>96测试</li>
+      <li>97测试</li>
+      <li>98测试</li>
+      <li>99测试</li>
+      <li>100测试</li>
+      <li>101测试</li>
+      <li>102测试</li>
+      <li>103测试</li>
+      <li>104测试</li>
+      <li>105测试</li>
+      <li>106测试</li>
+      <li>107测试</li>
+      <li>108测试</li>
+      <li>109测试</li>
+      <li>110测试</li>
+      <li>111测试</li>
+      <li>112测试</li>
+      <li>113测试</li>
+      <li>114测试</li>
+      <li>115测试</li>
+      <li>116测试</li>
+      <li>117测试</li>
+      <li>118测试</li>
+      <li>119测试</li>
+      <li>120测试</li>
+      <li>121测试</li>
+      <li>122测试</li>
+      <li>123测试</li>
+      <li>124测试</li>
+      <li>125测试</li>
+      <li>126测试</li>
+      <li>127测试</li>
+      <li>128测试</li>
+      <li>129测试</li>
+      <li>130测试</li>
+      <li>131测试</li>
+      <li>132测试</li>
+      <li>133测试</li>
+      <li>134测试</li>
+      <li>135测试</li>
+      <li>136测试</li>
+      <li>137测试</li>
+      <li>138测试</li>
+      <li>139测试</li>
+      <li>140测试</li>
+      <li>141测试</li>
+      <li>142测试</li>
+      <li>143测试</li>
+      <li>144测试</li>
+      <li>145测试</li>
+      <li>146测试</li>
+      <li>147测试</li>
+      <li>148测试</li>
+      <li>149测试</li>
+      <li>150测试</li>
+      <li>151测试</li>
+      <li>152测试</li>
+      <li>153测试</li>
+      <li>154测试</li>
+      <li>155测试</li>
+      <li>156测试</li>
+      <li>157测试</li>
+      <li>158测试</li>
+      <li>159测试</li>
+      <li>160测试</li>
+      <li>161测试</li>
+      <li>162测试</li>
+      <li>163测试</li>
+      <li>164测试</li>
+      <li>165测试</li>
+      <li>166测试</li>
+      <li>167测试</li>
+      <li>168测试</li>
+      <li>169测试</li>
+      <li>170测试</li>
+      <li>171测试</li>
+      <li>172测试</li>
+      <li>173测试</li>
+      <li>174测试</li>
+      <li>175测试</li>
+      <li>176测试</li>
+      <li>177测试</li>
+      <li>178测试</li>
+      <li>179测试</li>
+      <li>180测试</li>
+      <li>181测试</li>
+      <li>182测试</li>
+      <li>183测试</li>
+      <li>184测试</li>
+      <li>185测试</li>
+      <li>186测试</li>
+      <li>187测试</li>
+      <li>188测试</li>
+      <li>189测试</li>
+      <li>190测试</li>
+      <li>191测试</li>
+      <li>192测试</li>
+      <li>193测试</li>
+      <li>194测试</li>
+      <li>195测试</li>
+      <li>196测试</li>
+      <li>197测试</li>
+      <li>198测试</li>
+      <li>199测试</li>
+      <li>200测试</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import BScroll from "better-scroll";
+
+export default {
+  name: "Category",
+  data() {
+    return {
+      scroll: null,
+    };
+  },
+  mounted() {
+    this.scroll = new BScroll(document.querySelector(".wrapper"), {
+      probeType: 3,
+      pullUpLoad: true,
+    });
+
+    this.scroll.on("scroll", (position) => {
+      console.log(position);
+    });
+
+    this.scroll.on("pullingUp", () => {
+      console.log("上拉加载更多");
+    });
+  },
+};
+</script>
+
+<style>
+.wrapper {
+  height: 150px;
+  background: skyblue;
+}
+</style>
